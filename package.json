@@ -1,0 +1,19 @@
+{
+  "name": "codelingual",
+  "version": "1.0.0",
+  "description": "The purpose of this web application is to help individuals quickly learn the basics of new languages by translating standard and common functions from one language to another (so like Google Translate, but for code)!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xapollon430/CodeLingual.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Xapollon430/CodeLingual/issues"
+  },
+  "homepage": "https://github.com/Xapollon430/CodeLingual#readme"
+}
