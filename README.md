@@ -1,4 +1,4 @@
-# TransLang: The Programming Language Translator
+# BoobahLang: The Programming Language Translator
 
 The purpose of this web application is to help individuals quickly learn the basics of new languages by translating standard and common functions from one language to another (so like Google Translate, but for code)!
 
