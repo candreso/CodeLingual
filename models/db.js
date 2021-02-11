@@ -9,7 +9,7 @@ mongoose.connect(
     useUnifiedTopology: true,
   },
   () => {
-    // We need a db link from the .env file to connec to MongoDB.
+    // We need a db link from the .env file to connect to MongoDB.
     console.log("Connected to mongoose");
   }
 );

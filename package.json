@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Xapollon430/CodeLingual.git"
+    "url": "git+https://github.com/candreso/CodeLingual.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Xapollon430/CodeLingual/issues"
+    "url": "https://github.com/candreso/CodeLingual/issues"
   },
-  "homepage": "https://github.com/Xapollon430/CodeLingual#readme",
+  "homepage": "https://github.com/candreso/CodeLingual#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
