@@ -10,6 +10,6 @@ mongoose.connect(
   },
   () => {
     // We need a db link from the .env file to connect to MongoDB.
-    console.log("Connected to mongoose");
+    console.log("Connected to database!");
   }
 );
