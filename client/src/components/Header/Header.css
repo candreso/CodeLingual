@@ -1,0 +1,26 @@
+.header-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-sizing: border-box;
+  padding: 10px 20px;
+
+  display: grid;
+  align-items: center;
+  grid-template-columns: 200px auto 50px;
+}
+
+.header-brand {
+  font-size: 2rem;
+  display: inline;
+}
+
+.drawer-buttons {
+  width: 200px;
+  padding: 20px;
+  display: grid;
+  grid-template-rows: 50px 50px 50px;
+  grid-gap: 20px;
+}

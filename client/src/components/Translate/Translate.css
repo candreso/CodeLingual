@@ -1,4 +1,89 @@
 .translate-wrap {
-  margin-top: 100px;
-  width: 60%;
+  width: 80%;
+  max-width: 800px;
+  margin: 200px auto 0px auto;
+  text-align: center;
 }
+
+.brand {
+  font-size: 5rem;
+}
+
+.text {
+  margin-top: 20px;
+  font-size: 1.5rem;
+
+  line-height: 1.7;
+  letter-spacing: 0.7px;
+  font-weight: 400;
+}
+
+.input-wrap {
+  margin-top: 40px;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 3fr 2fr 3fr;
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-areas:
+    "source icon destination"
+    "text text text"
+    ". . submit";
+  row-gap: 30px;
+}
+
+.center {
+  display: grid;
+  place-items: center;
+}
+
+.input-code {
+  grid-column: span 3;
+  grid-area: text;
+  border: none;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  font-size: 2rem;
+  padding-left: 30px;
+}
+
+.source {
+  grid-area: source;
+}
+
+.destination {
+  grid-area: destination;
+}
+
+.icon {
+  grid-area: icon;
+}
+
+.submit {
+  grid-area: submit;
+}
+
+.submit-button {
+  width: 60%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .submit-button {
+    width: 100%;
+  }
+  .brand {
+    font-size: 3rem;
+  }
+  .translate-wrap {
+    margin: 100px auto 0px auto;
+  }
+}
+
+/* .submit {
+  grid-area: submit;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  background-color: #4f6ccd;
+  color: white;
+} */
