@@ -1,7 +1,7 @@
 .translate-wrap {
   width: 80%;
   max-width: 800px;
-  margin: 200px auto 0px auto;
+  margin: 150px auto 0px auto;
   text-align: center;
 }
 
@@ -23,12 +23,12 @@
   display: grid;
   width: 100%;
   grid-template-columns: 3fr 2fr 3fr;
-  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-rows: 2fr 4fr 2fr;
   grid-template-areas:
     "source icon destination"
     "text text text"
     ". . submit";
-  row-gap: 30px;
+  row-gap: 15px;
 }
 
 .center {
@@ -65,6 +65,14 @@
 .submit-button {
   width: 60%;
   height: 100%;
+}
+
+.output {
+  width: 100%;
+  border: 1px solid black;
+  margin-top: 10px;
+  height: 200px;
+  overflow-y: scroll;
 }
 
 @media only screen and (max-width: 600px) {

@@ -6,8 +6,16 @@ import { Button } from "@material-ui/core";
 import "./Translate.css";
 
 const Translate = () => {
+  //I recommend reading https://reactjs.org/docs/conditional-rendering.html
+  // and https://reactjs.org/docs/hooks-state.html
+  // The submit button needs an event listener that sets a state
+  // and on the next "lifecycle render" depending on that state
+  // we can decide whether we want to render jsx
+  // I am here if you need any help at all.
+
   return (
     <div className="translate-wrap">
+      {/* The h1 and the p below should be rendered only if a "state" is true*/}
       <h1 className="brand">CodeLingual</h1>
       <p className="text">
         Select your source and destination languages from the dropdown menus,
@@ -31,6 +39,14 @@ const Translate = () => {
           </Button>
         </div>
       </div>
+
+      {/* 
+        This div with the className "output" will be dynamically 
+        be shown depending on a "state". After it is displaying on the 
+        screen you can render more divs in it with fake data.
+      */}
+
+      {/* <div className="output"></div> */}
     </div>
   );
 };

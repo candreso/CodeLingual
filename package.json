@@ -5,6 +5,7 @@
   "main": "./client/public/index.html",
   "scripts": {
     "server": "(cd server && npm run server)",
+    "build-client": "(cd client && npm run build)",
     "win-install-all": "(cd client && npm install) && (cd ../server && npm install)",
     "lin-install-all": "(cd client && npm install); (cd ../server && npm install)"
   },
