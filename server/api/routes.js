@@ -7,7 +7,7 @@ const translatePath = "/translate";
 const adminPath = "/admin";
 
 /* MAIN PAGES */
-router.route("/").get(trnsCtrl.translate);
+router.route("/").get(trnsCtrl.translate); // TO DO: remove?
 // other pages with no associated requests: /about
 
 /* TRANSLATE PAGES */
