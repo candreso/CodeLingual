@@ -9,9 +9,9 @@ const app = express();
 const port = process.env.PORT || 5000; // Checking if env port is given. If not default to 5000.
 
 /* Register API routes */
+app.use(express.static(path.resolve(__dirname, "../client/build")));
 app.use("/", routes);
-app.use("/", express.static(path.resolve(__dirname, "../client/build")));
-// app.use("*", (req, res) => res.status(404).json({ error: "not found" }));
+app.use("*", (req, res) => res.status(404).json({ error: "page not found" }));
 
 /* app.get("/", (req, res) => {
   res.send("<h1>Hey peeps</h1>");

@@ -12,12 +12,12 @@ router.route("/").get(trnsCtrl.translate);
 
 /* TRANSLATE PAGES */
 router.route(`${translatePath}/`).get(trnsCtrl.translate);
-router.route(`${translatePath}/add/`).post(trnsCtrl.addTranslation);
-router.route(`${translatePath}/report/`).put(trnsCtrl.reportTranslation);
+router.route(`${translatePath}/add/`).post(trnsCtrl.add);
+router.route(`${translatePath}/report/`).put(trnsCtrl.report);
 
 /* ADMIN PAGES */
 router.route(`${adminPath}/login/`).get(admnCtrl.login); // change to POST for security reasons?
-router.route(`${adminPath}/dashboard/`).post(adminCtrl.processChanges);
+router.route(`${adminPath}/dashboard/`).post(admnCtrl.process);
 // router.route(`${adminPath}/register/`).post(); // not set-in-stone
 
 module.exports = router;
