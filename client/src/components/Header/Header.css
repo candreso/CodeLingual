@@ -6,7 +6,7 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   box-sizing: border-box;
   padding: 10px 20px;
-
+  background-color: white;
   display: grid;
   align-items: center;
   grid-template-columns: 200px auto 50px;

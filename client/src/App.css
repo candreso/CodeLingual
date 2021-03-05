@@ -1,6 +1,0 @@
-.wrap {
-  margin: 0px auto;
-  height: 100%;
-  display: grid;
-  grid-template-rows: auto 50px;
-}
