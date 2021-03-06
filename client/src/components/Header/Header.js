@@ -22,6 +22,7 @@ const Header = () => {
     setHamburgerOpen(!hamburgerOpen);
   };
 
+  // creating my own routing system bruh
   const redirect = (e) => {
     const link = e.target.innerHTML;
 

@@ -1,8 +1,8 @@
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-import Landing from "./components/Landing/Landing";
-import Auth from "./components/Auth/Auth";
-import AboutUs from "./components/AboutUs/AboutUs";
+import Header from "./Components/Header/Header";
+import Footer from "./Components/Footer/Footer";
+import Landing from "./Components/Landing/Landing";
+import Auth from "./Components/Auth/Auth";
+import AboutUs from "./Components/AboutUs/AboutUs";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const App = () => {
