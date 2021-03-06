@@ -1,21 +1,18 @@
-import React from 'react';
-import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
+import React from "react";
+import Typography from "@material-ui/core/Typography";
+import Link from "@material-ui/core/Link";
+import "./Footer.css";
 
-//it is a pure function and has no state (it is not a class)
 const Footer = () => {
-    return (
-        <div >
-            <Typography variant="body2" color="textSecondary" align="center">
-            {'Copyright © '}
-            <Link color="inherit" href="https://github.com/candreso/CodeLingual">
-            CodeLingual
-            </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-             </Typography>    
-        </div>
-    );
-}
+  return (
+    <div className="footer">
+      <Typography variant="body2" color="textSecondary" align="center">
+        <Link color="inherit" href="https://github.com/candreso/CodeLingual">
+          Copyright © CodeLingual {new Date().getFullYear()}
+        </Link>
+      </Typography>
+    </div>
+  );
+};
 
 export default Footer;

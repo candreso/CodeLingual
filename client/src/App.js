@@ -1,15 +1,22 @@
-import "./App.css";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer"
-import Translate from "./components/Translate/Translate";
-function App() {
+import Header from "./Components/Header/Header";
+import Footer from "./Components/Footer/Footer";
+import Landing from "./Components/Landing/Landing";
+import Auth from "./Components/Auth/Auth";
+import AboutUs from "./Components/AboutUs/AboutUs";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+const App = () => {
   return (
-    <div className="wrap">
+    <Router>
       <Header />
-      <Translate />
+      <Switch>
+        <Route exact path="/auth" render={() => <Auth />} />
+        <Route exact path="/about-us" render={() => <AboutUs />} />
+        <Route exact path="/" render={() => <Landing />} />
+      </Switch>
       <Footer />
-    </div>
+    </Router>
   );
-}
+};
 
 export default App;
