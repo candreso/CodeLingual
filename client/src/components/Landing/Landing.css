@@ -47,7 +47,7 @@
   grid-column: span 3;
   grid-area: text;
   border: none;
-  background-color: rgba(0, 0, 0, 0.075);
+  background-color: rgba(0, 0, 0, 0.06);
   border-radius: 10px;
   font-size: 2rem;
   padding-left: 30px;
@@ -55,11 +55,11 @@
 }
 
 input:hover {
-  background-color: rgba(0, 0, 0, 0.12);
+  background-color: rgba(0, 0, 0, 0.105);
 }
 
 input:focus {
-  background-color: rgba(0, 0, 0, 0.075);
+  background-color: rgba(0, 0, 0, 0.06);
   outline: none !important;
   /* border: 2px solid red;
   border-radius: 10px; */
