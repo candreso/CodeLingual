@@ -12,6 +12,11 @@
   text-align: center;
 }
 
+.center {
+  display: grid;
+  place-items: center;
+}
+
 .brand {
   font-size: 5rem;
 }
@@ -35,19 +40,14 @@
     "source icon destination"
     "text text text"
     ". . submit";
-  row-gap: 15px;
-}
-
-.center {
-  display: grid;
-  place-items: center;
+  row-gap: 17px;
 }
 
 .input-code {
   grid-column: span 3;
   grid-area: text;
   border: none;
-  background-color: #f2f2f2;
+  background-color: rgba(0, 0, 0, 0.075);
   border-radius: 10px;
   font-size: 2rem;
   padding-left: 30px;
@@ -55,15 +55,15 @@
 }
 
 input:hover {
-  background-color: yellow;
+  background-color: rgba(0, 0, 0, 0.12);
 }
 
 input:focus {
-  background-color: #f2f2f2;
+  background-color: rgba(0, 0, 0, 0.075);
   outline: none !important;
   /* border: 2px solid red;
   border-radius: 10px; */
-  box-shadow: 0 0 0 2px red;
+  box-shadow: 0 0 0 1.5px #dc004e;
 }
 
 .source {
