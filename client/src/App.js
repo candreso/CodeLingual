@@ -1,4 +1,5 @@
 import Header from "./Components/Header/Header";
+import ChloeHeader from "./components/Header/ChloeHeader";
 import Footer from "./Components/Footer/Footer";
 import Landing from "./Components/Landing/Landing";
 import Auth from "./Components/Auth/Auth";
@@ -8,7 +9,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 const App = () => {
   return (
     <Router>
-      <Header />
+      <ChloeHeader />
       <Switch>
         <Route exact path="/auth" render={() => <Auth />} />
         <Route exact path="/about-us" render={() => <AboutUs />} />
