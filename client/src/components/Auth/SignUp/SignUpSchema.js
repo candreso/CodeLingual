@@ -10,55 +10,54 @@ const SignUpSchema = Yup.object().shape({
   email: Yup.string()
     .email("Please enter a valid email")
     .required("Email is required"),
-  name: Yup.string().required("First name is required"),
-  surname: Yup.string().required("Surname is required"),
   password: Yup.string()
     .required("Password is required")
     .min(6, "Password is too short"),
+  passwordConfirmation: Yup.string()
+    .required("Password Confirmation is required")
+    .oneOf([Yup.ref("password"), null], "Passwords must match"),
 });
 
 export default (setErrorFromServer) => {
   const [_, dispatch] = useContext(StoreContext);
-  const query = useQuery();
   const history = useHistory();
 
   return useFormik({
     initialValues: {
       email: "",
-      name: "",
-      surname: "",
       password: "",
+      passwordConfirmation: "",
     },
     validationSchema: SignUpSchema,
     onSubmit: async (values, { resetForm }) => {
       try {
-        let response = await fetch(
-          `${process.env.SITTERSCAPE_API_URL}/api/sign-up`,
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-            method: "POST",
-            credentials: "include",
-            body: JSON.stringify(values),
-          }
-        );
+        // let response = await fetch(
+        //   `${process.env.CODELINGUAL_API_URL}/api/sign-up`,
+        //   {
+        //     headers: {
+        //       "Content-Type": "application/json",
+        //     },
+        //     method: "POST",
+        //     credentials: "include",
+        //     body: JSON.stringify(values),
+        //   }
+        // );
 
-        if (response.status != 200) {
-          throw await response.text();
-        }
+        // if (response.status != 200) {
+        //   throw await response.text();
+        // }
 
-        let data = await response.json();
+        // let data = await response.json();
 
-        dispatch(
-          actions.generalDispatchBundler({
-            user: data.user,
-            loggedIn: true,
-            accessToken: data.accessToken,
-          })
-        );
+        // dispatch(
+        //   actions.generalDispatchBundler({
+        //     user: data.user,
+        //     loggedIn: true,
+        //     accessToken: data.accessToken,
+        //   })
+        // );
 
-        history.push(query.get("next"));
+        history.push("/");
       } catch (e) {
         setErrorFromServer(e);
         resetForm();
