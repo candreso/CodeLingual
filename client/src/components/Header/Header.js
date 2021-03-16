@@ -17,7 +17,7 @@ const BrandLink = styled(Link)`
 const Header = () => {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
   const history = useHistory();
-
+  console.log(history);
   const toggleMenu = () => {
     setHamburgerOpen(!hamburgerOpen);
   };

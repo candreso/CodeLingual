@@ -1,38 +1,29 @@
 import { useContext } from "react";
 import { useFormik } from "formik";
 import { StoreContext } from "../../../store/store";
-import { useHistory } from "react-router-dom";
 import { useQuery } from "../../../Functions/Functions";
+import { useHistory } from "react-router-dom";
 import * as actions from "../../../store/actions";
 import * as Yup from "yup";
 
-const SignUpSchema = Yup.object().shape({
-  email: Yup.string()
-    .email("Please enter a valid email")
-    .required("Email is required"),
-  password: Yup.string()
-    .required("Password is required")
-    .min(6, "Password is too short"),
-  passwordConfirmation: Yup.string()
-    .required("Password Confirmation is required")
-    .oneOf([Yup.ref("password"), null], "Passwords must match"),
+const LoginSchema = Yup.object().shape({
+  email: Yup.string().required("Email is required"),
+  password: Yup.string().required("Password is required"),
 });
 
 export default (setErrorFromServer) => {
   const [_, dispatch] = useContext(StoreContext);
   const history = useHistory();
-
   return useFormik({
     initialValues: {
       email: "",
       password: "",
-      passwordConfirmation: "",
     },
-    validationSchema: SignUpSchema,
+    validationSchema: LoginSchema,
     onSubmit: async (values, { resetForm }) => {
       try {
         // let response = await fetch(
-        //   `${process.env.CODELINGUAL_API_URL}/api/sign-up`,
+        //   `${process.env.SITTERSCAPE_API_URL}/api/login`,
         //   {
         //     headers: {
         //       "Content-Type": "application/json",
@@ -57,7 +48,7 @@ export default (setErrorFromServer) => {
         //   })
         // );
 
-        window.history.back();
+        history.goBack();
       } catch (e) {
         setErrorFromServer(e);
         resetForm();
