@@ -20,10 +20,6 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.2",
     "styled-components": "^5.2.1",
-<<<<<<< HEAD
-    "web-vitals": "^1.1.0",
-=======
->>>>>>> 5ddd4d47b48a47c80945cdc023637a104ce4675e
     "yup": "^0.32.9"
   },
   "scripts": {
