@@ -13,7 +13,6 @@ const LoginSchema = Yup.object().shape({
 
 export default (setErrorFromServer) => {
   const [_, dispatch] = useContext(StoreContext);
-  const query = useQuery();
   const history = useHistory();
   return useFormik({
     initialValues: {
@@ -23,33 +22,33 @@ export default (setErrorFromServer) => {
     validationSchema: LoginSchema,
     onSubmit: async (values, { resetForm }) => {
       try {
-        let response = await fetch(
-          `${process.env.SITTERSCAPE_API_URL}/api/login`,
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-            method: "POST",
-            credentials: "include",
-            body: JSON.stringify(values),
-          }
-        );
+        // let response = await fetch(
+        //   `${process.env.SITTERSCAPE_API_URL}/api/login`,
+        //   {
+        //     headers: {
+        //       "Content-Type": "application/json",
+        //     },
+        //     method: "POST",
+        //     credentials: "include",
+        //     body: JSON.stringify(values),
+        //   }
+        // );
 
-        if (response.status != 200) {
-          throw await response.text();
-        }
+        // if (response.status != 200) {
+        //   throw await response.text();
+        // }
 
-        let data = await response.json();
+        // let data = await response.json();
 
-        dispatch(
-          actions.generalDispatchBundler({
-            user: data.user,
-            loggedIn: true,
-            accessToken: data.accessToken,
-          })
-        );
+        // dispatch(
+        //   actions.generalDispatchBundler({
+        //     user: data.user,
+        //     loggedIn: true,
+        //     accessToken: data.accessToken,
+        //   })
+        // );
 
-        history.push(query.get("next"));
+        history.goBack();
       } catch (e) {
         setErrorFromServer(e);
         resetForm();

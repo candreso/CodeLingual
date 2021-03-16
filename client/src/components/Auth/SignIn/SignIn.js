@@ -45,7 +45,6 @@ const SignIn = () => {
         style={{ fontSize: "1.2rem" }}
         variant="contained"
         color="secondary"
-        className="submit-button"
         type="submit"
         fullWidth
       >

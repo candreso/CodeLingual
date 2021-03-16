@@ -57,7 +57,7 @@ export default (setErrorFromServer) => {
         //   })
         // );
 
-        history.push("/");
+        window.history.back();
       } catch (e) {
         setErrorFromServer(e);
         resetForm();
