@@ -1,14 +1,10 @@
-const mongoose = require("mongoose");
+const MongoClient = require("mongodb").MongoClient;
 require("dotenv").config();
 
-mongoose.connect(
-  process.env.MONGO_URL,
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  },
-  () => {
-    // We need a db link from the .env file to connect to MongoDB.
-    console.log("Connected to database!");
-  }
-);
+MongoClient.connect(process.env.MONGO_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}).then(() => {
+  // We need a db link from the .env file to connect to MongoDB.
+  console.log("Connected to database!");
+});
