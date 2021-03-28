@@ -11,7 +11,7 @@ const App = () => {
       <Header />
       <Switch>
         <Route exact path="/auth" render={() => <Auth />} />
-        <Route exact path="/about-us" render={() => <AboutUs />} />
+        <Route exact path="/AboutUs" render={() => <AboutUs />} />
         <Route exact path="/" render={() => <Landing />} />
       </Switch>
       <Footer />
