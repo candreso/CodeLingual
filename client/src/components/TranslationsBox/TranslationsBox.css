@@ -1,0 +1,32 @@
+.translations-wrap {
+  margin-top: 20px;
+  height: 400px;
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: grid;
+  grid-gap: 5px;
+  grid-auto-rows: 50px;
+  padding: 10px;
+}
+
+.translation {
+  width: 100%;
+  border: 1px solid #c4c4c4;
+  border-radius: 4px;
+  display: grid;
+  align-items: center;
+  justify-items: start;
+  padding-left: 5px;
+  grid-template-columns: 1fr 1fr;
+}
+
+code {
+  font-size: 1.3rem;
+}
+
+@media only screen and (max-width: 600px) {
+  code {
+    font-size: 1rem;
+  }
+}
