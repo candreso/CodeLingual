@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ModalWrap = styled.div`
-  z-index: 3;
+  z-index: 4;
   position: fixed;
   top: 45%;
   left: 50%;
