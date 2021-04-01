@@ -4,10 +4,10 @@ import { FormControl, InputLabel, Select, MenuItem } from "@material-ui/core";
 const LanguageDropdown = ({ className }) => {
   return (
     <FormControl variant="outlined">
-      <InputLabel>
+      <InputLabel id={className}>
         {className === "source" ? "Source" : "Destination"}
       </InputLabel>
-      <Select label={className === "source" ? "Source" : "Destination"}>
+      <Select labelId={className}>
         <MenuItem value="C">C</MenuItem>
         <MenuItem value="Javascript">Javascript</MenuItem>
         <MenuItem value="Java">Java</MenuItem>
