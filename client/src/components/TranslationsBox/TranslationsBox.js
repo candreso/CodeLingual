@@ -1,5 +1,8 @@
 import "./TranslationsBox.css";
-import { faExclamation } from "@fortawesome/free-solid-svg-icons";
+import {
+  faTimes,
+  faExclamationCircle,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import Modal from "../../UI/Modal/Modal";
@@ -11,12 +14,6 @@ const fakeData = [
   "export default colorPicker",
   "import lodash from {lodash}",
 ];
-
-const IconWrap = styled.div`
-  justify-self: end;
-  padding-right: 5px;
-  cursor: pointer;
-`;
 
 const TranslationsBox = () => {
   const [reportModal, openReportModal] = useState(false);
@@ -30,17 +27,26 @@ const TranslationsBox = () => {
         return (
           <div key={index} className="translation">
             <code>{data}</code>
-            <IconWrap>
+            <div className="icon-wrap">
               <FontAwesomeIcon
                 onClick={toggleModal}
-                icon={faExclamation}
+                icon={faExclamationCircle}
                 color="red"
                 size="2x"
               />
-            </IconWrap>
+            </div>
             {reportModal && (
               <Modal onClose={toggleModal} showModal={reportModal}>
-                123
+                <FontAwesomeIcon
+                  className="cancel-icon"
+                  icon={faTimes}
+                  onClick={toggleModal}
+                  color={"#dc004e"}
+                  size="2x"
+                />
+                <div>123</div>
+                <div>123</div> <div>123</div> <div>123</div>
+                <div>123</div> <div>123</div>
               </Modal>
             )}
           </div>

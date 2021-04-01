@@ -18,15 +18,32 @@
   align-items: center;
   justify-items: start;
   padding-left: 5px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr auto;
 }
 
 code {
   font-size: 1.3rem;
 }
 
+.icon-wrap {
+  justify-self: end;
+  padding-right: 5px;
+  cursor: pointer;
+}
+
+.cancel-icon {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
 @media only screen and (max-width: 600px) {
   code {
     font-size: 1rem;
+  }
+  .translations-wrap {
+    margin-top: 0px;
+
+    height: 220px;
   }
 }
