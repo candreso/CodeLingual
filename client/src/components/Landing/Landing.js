@@ -23,12 +23,18 @@ const Landing = () => {
 
   const translate = async () => {
     setIsLoading(true);
-    if (formData.code === "" || formData.sl === "" || formData.dl === "") {
+    if (
+      formData.code === "" ||
+      formData.sl === "" ||
+      formData.dl === "" ||
+      formData.dl === formData.sl
+    ) {
       setError(true);
     } else {
       setShowDescription(false);
       setError(false);
     }
+
     setTimeout(() => {
       setIsLoading(false);
     }, 2000);
@@ -47,7 +53,7 @@ const Landing = () => {
           </div>
         )}
         {error && (
-          <Alert severity="error">Please dont leave the form empty!</Alert>
+          <Alert severity="error">Please fill the form correctly!</Alert>
         )}
         <div className="input-wrap">
           <LanguageDropdown
@@ -88,7 +94,7 @@ const Landing = () => {
             <div className="spinner" />
           </div>
         ) : (
-          showDescription || <TranslationsBox />
+          showDescription || <TranslationsBox formData={formData} />
         )}
       </S.TranslateWrap>
     </div>

@@ -2,11 +2,12 @@ import "./TranslationsBox.css";
 import {
   faTimes,
   faExclamationCircle,
+  faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import { Button } from "@material-ui/core";
 import Modal from "../../UI/Modal/Modal";
-import styled from "styled-components";
 
 const fakeData = [
   "System.out.println('123')",
@@ -15,12 +16,18 @@ const fakeData = [
   "import lodash from {lodash}",
 ];
 
-const TranslationsBox = () => {
+const TranslationsBox = ({ formData }) => {
   const [reportModal, openReportModal] = useState(false);
+  const [updatedTranslation, setUpdatedTranslation] = useState("");
 
   const toggleModal = () => {
     openReportModal(!reportModal);
   };
+
+  const updateTranslation = () => {
+    
+  };
+
   return (
     <div className="translations-wrap">
       {fakeData.map((data, index) => {
@@ -44,9 +51,39 @@ const TranslationsBox = () => {
                   color={"#dc004e"}
                   size="2x"
                 />
-                <div>123</div>
-                <div>123</div> <div>123</div> <div>123</div>
-                <div>123</div> <div>123</div>
+                <div className="report-wrap">
+                  <div className="report-translation">
+                    <b>{formData.sl}</b>
+
+                    <FontAwesomeIcon
+                      icon={faArrowRight}
+                      color={"#dc004e"}
+                      size="1x"
+                    />
+
+                    <b>{formData.dl}</b>
+                  </div>
+                  <code className="report-code">{formData.code}</code>{" "}
+                  <div className="report-text">
+                    is inaccurate, and it should be...
+                  </div>
+                  <input
+                    className="report-code-input"
+                    placeholder="Enter Code"
+                    type="text"
+                    onChange={(e) => setUpdatedTranslation(e.target.value)}
+                    value={updatedTranslation}
+                  />
+                  <Button
+                    style={{ fontSize: "1.2rem" }}
+                    variant="contained"
+                    color="secondary"
+                    className="report-submit"
+                    onClick={updateTranslation}
+                  >
+                    Submit
+                  </Button>
+                </div>
               </Modal>
             )}
           </div>

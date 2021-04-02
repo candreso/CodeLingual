@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 export const TranslateWrap = styled.div`
   width: 95%;
@@ -9,3 +9,4 @@ export const TranslateWrap = styled.div`
     margin: 80px auto 0px auto;
   }
 `;
+
