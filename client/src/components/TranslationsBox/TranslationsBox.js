@@ -7,6 +7,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { Button } from "@material-ui/core";
+import Alert from "@material-ui/lab/Alert";
 import Modal from "../../UI/Modal/Modal";
 
 const fakeData = [
@@ -19,13 +20,21 @@ const fakeData = [
 const TranslationsBox = ({ formData }) => {
   const [reportModal, openReportModal] = useState(false);
   const [updatedTranslation, setUpdatedTranslation] = useState("");
+  const [error, setError] = useState(false);
+  const [submitSucces, setSubmitSuccess] = useState(null);
 
   const toggleModal = () => {
     openReportModal(!reportModal);
   };
 
   const updateTranslation = () => {
-    
+    if (updatedTranslation === "") {
+      setError(true);
+    } else {
+      setError(false);
+
+      // fetch("localhost:5000/api/v1/update-translation");
+    }
   };
 
   return (
@@ -52,6 +61,14 @@ const TranslationsBox = ({ formData }) => {
                   size="2x"
                 />
                 <div className="report-wrap">
+                  {error && (
+                    <Alert
+                      style={{ width: "100%", boxSizing: "border-box" }}
+                      severity="error"
+                    >
+                      Please fill the form correctly!
+                    </Alert>
+                  )}
                   <div className="report-translation">
                     <b>{formData.sl}</b>
 

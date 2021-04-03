@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faExchangeAlt,
-  faExclamation,
-} from "@fortawesome/free-solid-svg-icons";
+import { faExchangeAlt } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "@material-ui/core";
+import { useHistory } from "react-router-dom";
 import Alert from "@material-ui/lab/Alert";
 import LanguageDropdown from "../LanguageDropdown/LanguageDropdown";
 import TranslationsBox from "../TranslationsBox/TranslationsBox";
@@ -16,13 +14,13 @@ const Landing = () => {
   const [formData, setFormData] = useState({ sl: "", dl: "", code: "" });
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const history = useHistory();
 
   const changeFormData = (data) => {
     setFormData({ ...formData, ...data });
   };
 
   const translate = async () => {
-    setIsLoading(true);
     if (
       formData.code === "" ||
       formData.sl === "" ||
@@ -31,13 +29,18 @@ const Landing = () => {
     ) {
       setError(true);
     } else {
-      setShowDescription(false);
       setError(false);
+      setIsLoading(true);
+      setShowDescription(false);
+
+      const TRANSLATE_END_POINT = "";
+
+      history.push("?sl=c&dl=javascript&code=console.log()");
     }
 
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 1000);
   };
 
   return (
@@ -90,9 +93,7 @@ const Landing = () => {
           </div>
         </div>
         {isLoading ? (
-          <div className="spinner-wrap">
-            <div className="spinner" />
-          </div>
+          <div className="spinner" />
         ) : (
           showDescription || <TranslationsBox formData={formData} />
         )}

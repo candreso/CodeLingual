@@ -48,8 +48,9 @@ code {
   display: grid;
   align-items: center;
   justify-items: center;
-  grid-template-rows: 60px 60px 60px 100px;
+  grid-auto-rows: auto;
   grid-auto-columns: 100%;
+  grid-gap: 20px;
 }
 .report-code {
   font-size: 1.5rem;
@@ -78,7 +79,6 @@ code {
 }
 
 .report-submit {
-  margin-bottom: 10px;
   width: 50%;
 }
 
@@ -87,7 +87,7 @@ code {
     font-size: 0.9rem;
   }
   .report-wrap {
-    grid-template-rows: 40px 40px 40px 100px;
+    grid-gap: 10px;
   }
   .translations-wrap {
     margin-top: 0px;

@@ -12,7 +12,7 @@ const App = () => {
       <Switch>
         <Route exact path="/auth" render={() => <Auth />} />
         <Route exact path="/about-us" render={() => <AboutUs />} />
-        <Route exact path="/" render={() => <Landing />} />
+        <Route exact path={["/", "/translate"]} render={() => <Landing />} />
       </Switch>
       <Footer />
     </Router>
