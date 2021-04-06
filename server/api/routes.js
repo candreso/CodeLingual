@@ -18,6 +18,6 @@ router.route(`${translatePath}/report/`).put(trnsCtrl.report);
 /* ADMIN PAGES */
 router.route(`${adminPath}/login/`).get(admnCtrl.login); // change to POST for security reasons?
 router.route(`${adminPath}/dashboard/`).put(admnCtrl.process);
-// router.route(`${adminPath}/register/`).post(); // not set-in-stone
+router.route(`${adminPath}/signup/`).post(admnCtrl.signup);
 
 module.exports = router;
