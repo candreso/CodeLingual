@@ -20,4 +20,9 @@ router.route(`${adminPath}/login/`).get(admnCtrl.login); // change to POST for s
 router.route(`${adminPath}/dashboard/`).put(admnCtrl.process);
 router.route(`${adminPath}/signup/`).post(admnCtrl.signup);
 
+/* ERROR 404 */
+router.use("*", (req, res) =>
+  res.status(404).json({ error: "page not found" })
+);
+
 module.exports = router;
