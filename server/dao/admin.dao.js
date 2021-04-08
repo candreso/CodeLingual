@@ -13,6 +13,9 @@ async function injectDb(conn) {
   }
 }
 
+/* add helper functions here, and link to module.exports for use in admin.controller.js
+ * and db.js */
+
 module.exports = {
   injectDb,
 };
