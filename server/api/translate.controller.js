@@ -1,12 +1,14 @@
-function getTranslations(req, res) {
+async function getTranslations(req, res) {
+  console.log(req.query.sl); // for testing
+
   res.send("Inside translate() in translate.controller");
 }
 
-function addTranslation(req, res) {
+async function addTranslation(req, res) {
   res.send("Inside addTranslation() in translate.controller");
 }
 
-function reportTranslation(req, res) {
+async function reportTranslation(req, res) {
   res.send("Inside reportTranslation() in translate.controller");
 }
 
