@@ -17,6 +17,38 @@ async function injectDb(conn) {
   }
 }
 
+async function getTranslations(srcLang, dstLang, code) {
+  // just for testing
+  console.log("Source language: " + srcLang);
+  console.log("Destination language: " + dstLang);
+  console.log("Function: " + code);
+
+  let doc;
+  try {
+    let query = {};
+    query[`${srcLang}.code`] = code;
+
+    let options = {
+      /* TODO: add sort field */
+      // sort: default
+      projection: {},
+    };
+    options.projection[dstLang] = 1;
+
+    console.log(query);
+    console.log(options);
+
+    doc = await trnsCol.findOne(query, options);
+    console.log(doc);
+  } catch (e) {
+    console.error(`Unable to get specified translation, ${e}`);
+    return {};
+  }
+
+  return doc;
+}
+
 module.exports = {
   injectDb,
+  getTranslations,
 };
