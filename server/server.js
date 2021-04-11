@@ -17,7 +17,7 @@ app.use(express.json());
 /* Register API routes */
 app.use("/api/v1", routes);
 app.use("/", express.static(path.resolve(__dirname, "../client/build")));
-// app.use("*", (req, res) => res.status(404).json({ error: "page not found" }));
+app.use("*", express.static(path.resolve(__dirname, "../client/build")));
 
 app.listen(port, () => {
   console.log(`Server started at http://localhost:${port}!`);

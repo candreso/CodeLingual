@@ -1,13 +1,23 @@
 import React from "react";
 import { FormControl, InputLabel, Select, MenuItem } from "@material-ui/core";
 
-const LanguageDropdown = ({ className }) => {
+const LanguageDropdown = ({ className, changeFormData, formData }) => {
+  const type = className === "source" ? "sl" : "dl";
+
+  const changeHandler = (value) => {
+    changeFormData({ [type]: value });
+  };
+
   return (
     <FormControl variant="outlined">
       <InputLabel>
         {className === "source" ? "Source" : "Destination"}
       </InputLabel>
-      <Select label={className === "source" ? "Source" : "Destination"}>
+      <Select
+        onChange={(e) => changeHandler(e.target.value)}
+        label={className === "source" ? "Source" : "Destination"}
+        value={formData[type]}
+      >
         <MenuItem value="C">C</MenuItem>
         <MenuItem value="Javascript">Javascript</MenuItem>
         <MenuItem value="Java">Java</MenuItem>
