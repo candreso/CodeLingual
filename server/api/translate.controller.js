@@ -5,10 +5,8 @@ async function apiGetTranslations(req, res) {
   let srcLang = req.query.sl;
   let dstLang = req.query.tl;
   let code = req.query.code;
-
   let translation = await TranslateDao.getTranslations(srcLang, dstLang, code);
 
-  // res.send("Inside translate() in translate.controller");
   res.json(translation);
 }
 
