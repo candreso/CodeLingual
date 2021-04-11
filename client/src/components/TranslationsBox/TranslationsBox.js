@@ -1,9 +1,14 @@
 import "./TranslationsBox.css";
-import { faExclamation } from "@fortawesome/free-solid-svg-icons";
+import {
+  faTimes,
+  faExclamationCircle,
+  faArrowRight,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import { Button } from "@material-ui/core";
+import Alert from "@material-ui/lab/Alert";
 import Modal from "../../UI/Modal/Modal";
-import styled from "styled-components";
 
 const fakeData = [
   "System.out.println('123')",
@@ -12,35 +17,90 @@ const fakeData = [
   "import lodash from {lodash}",
 ];
 
-const IconWrap = styled.div`
-  justify-self: end;
-  padding-right: 5px;
-  cursor: pointer;
-`;
-
-const TranslationsBox = () => {
+const TranslationsBox = ({ formData }) => {
   const [reportModal, openReportModal] = useState(false);
+  const [updatedTranslation, setUpdatedTranslation] = useState("");
+  const [error, setError] = useState(false);
+  const [submitSucces, setSubmitSuccess] = useState(null);
 
   const toggleModal = () => {
     openReportModal(!reportModal);
   };
+
+  const updateTranslation = () => {
+    if (updatedTranslation === "") {
+      setError(true);
+    } else {
+      setError(false);
+
+      // fetch("localhost:5000/api/v1/update-translation");
+    }
+  };
+
   return (
     <div className="translations-wrap">
       {fakeData.map((data, index) => {
         return (
           <div key={index} className="translation">
             <code>{data}</code>
-            <IconWrap>
+            <div className="icon-wrap">
               <FontAwesomeIcon
                 onClick={toggleModal}
-                icon={faExclamation}
+                icon={faExclamationCircle}
                 color="red"
                 size="2x"
               />
-            </IconWrap>
+            </div>
             {reportModal && (
               <Modal onClose={toggleModal} showModal={reportModal}>
-                123
+                <FontAwesomeIcon
+                  className="cancel-icon"
+                  icon={faTimes}
+                  onClick={toggleModal}
+                  color={"#dc004e"}
+                  size="2x"
+                />
+                <div className="report-wrap">
+                  {error && (
+                    <Alert
+                      style={{ width: "100%", boxSizing: "border-box" }}
+                      severity="error"
+                    >
+                      Please fill the form correctly!
+                    </Alert>
+                  )}
+                  <div className="report-translation">
+                    <b>{formData.sl}</b>
+
+                    <FontAwesomeIcon
+                      icon={faArrowRight}
+                      color={"#dc004e"}
+                      size="1x"
+                    />
+
+                    <b>{formData.dl}</b>
+                  </div>
+                  <code className="report-code">{formData.code}</code>{" "}
+                  <div className="report-text">
+                    is inaccurate, and it should be...
+                  </div>
+                  <input
+                    className="report-code-input"
+                    placeholder="Enter Code"
+                    type="text"
+                    onChange={(e) => setUpdatedTranslation(e.target.value)}
+                    value={updatedTranslation}
+                  />
+                  <Button
+                    style={{ fontSize: "1.2rem" }}
+                    variant="contained"
+                    color="secondary"
+                    className="report-submit"
+                    onClick={updateTranslation}
+                  >
+                    Submit
+                  </Button>
+                </div>
               </Modal>
             )}
           </div>

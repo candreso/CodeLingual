@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const ModalWrap = styled.div`
-  z-index: 3;
+  z-index: 4;
   position: fixed;
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 80%;
-  max-width: 400px;
+  max-width: 500px;
   background: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 8px;
@@ -20,5 +20,5 @@ export const GrayBackdrop = styled.div`
   width: 100%;
   height: 100vh;
   background: rgba(0, 0, 0, 0.3);
-  z-index: 2;
+  z-index: 3;
 `;

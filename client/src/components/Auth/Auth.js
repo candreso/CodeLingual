@@ -3,7 +3,9 @@ import { useQuery } from "../../Functions/Functions";
 import styled from "styled-components";
 import SignIn from "./SignIn/SignIn";
 import SignUp from "./SignUp/SignUp";
+import AdminSignIn from "./AdminSignIn/AdminSignIn";
 import "./Auth.css";
+import { useLocation } from "react-router";
 
 const Tab = styled.div`
   font-size: 1.7rem;
@@ -12,8 +14,15 @@ const Tab = styled.div`
   place-items: center;
 `;
 
+const AdminTab = styled.div`
+  font-size: 1.7rem;
+  margin: 5px 0px 5px 0px;
+  display: grid;
+  place-items: center;
+`;
 const Auth = () => {
   const query = useQuery();
+  const location = useLocation();
 
   const [selectedTab, setSelectedTab] = useState(
     query.get("type") || "sign-up"
@@ -24,6 +33,17 @@ const Auth = () => {
       ? setSelectedTab("sign-in")
       : setSelectedTab("sign-up");
   };
+
+  if (location.pathname.includes("admin")) {
+    return (
+      <div className="form-wrap">
+        <div className="form">
+          <AdminTab>Admin Sign In</AdminTab>
+          <AdminSignIn />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="form-wrap">

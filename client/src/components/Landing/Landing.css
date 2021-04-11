@@ -1,8 +1,5 @@
 .wrap {
-  margin: 0px auto;
-  height: 100%;
-  display: grid;
-  grid-template-rows: auto 50px;
+  overflow: hidden;
 }
 
 .center {
@@ -119,10 +116,15 @@ input:focus {
   .input-wrap {
     margin-top: 20px;
     grid-template-rows: 2fr 3fr 2fr;
+    grid-template-areas:
+      "source icon destination"
+      "text text text"
+      "submit submit submit";
   }
 
   .input-code {
     font-size: 1.3rem;
+    padding-left: 10px;
   }
 
   .spinner {

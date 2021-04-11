@@ -18,15 +18,99 @@
   align-items: center;
   justify-items: start;
   padding-left: 5px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr auto;
 }
 
 code {
   font-size: 1.3rem;
+  background-color: #eee;
+  border-radius: 3px;
+  font-family: courier, monospace;
+  padding: 0 3px;
+}
+
+.icon-wrap {
+  justify-self: end;
+  padding-right: 5px;
+  cursor: pointer;
+}
+
+.cancel-icon {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.report-wrap {
+  padding: 35px 5px 10px 5px;
+  font-size: 2rem;
+  text-align: center;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-auto-rows: auto;
+  grid-auto-columns: 100%;
+  grid-gap: 20px;
+}
+.report-code {
+  font-size: 1.5rem;
+}
+
+.report-translation {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  word-wrap: break-word;
+}
+
+.report-text {
+  font-size: 1.5rem;
+}
+
+.report-code-input {
+  background-color: rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  font-size: 2rem;
+  padding-left: 30px;
+  transition: background-color 0.3s ease, box-shadow 0.1s linear;
+  height: 60px;
+  width: 80%;
+}
+
+.report-submit {
+  width: 50%;
 }
 
 @media only screen and (max-width: 600px) {
   code {
+    font-size: 0.9rem;
+  }
+  .report-wrap {
+    grid-gap: 10px;
+  }
+  .translations-wrap {
+    margin-top: 0px;
+    grid-auto-rows: 45px;
+
+    height: 220px;
+  }
+
+  .report-code {
+    font-size: 1.1rem;
+    word-break: break-all;
+  }
+
+  .report-translation {
+    width: 90%;
+    font-size: 1.4rem;
+  }
+  .report-text {
     font-size: 1rem;
+  }
+
+  .report-code-input {
+    font-size: 1.2rem;
+    padding-left: 10px;
   }
 }
