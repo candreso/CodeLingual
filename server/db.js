@@ -1,4 +1,6 @@
 const MongoClient = require("mongodb").MongoClient;
+const translateDao = require("./dao/translate.dao");
+const adminDao = require("./dao/admin.dao");
 require("dotenv").config();
 
 MongoClient.connect(process.env.MONGO_URL, {
@@ -9,7 +11,8 @@ MongoClient.connect(process.env.MONGO_URL, {
     console.error(err.stack);
     process.exit(1);
   })
-  .then(() => {
-    // We need a db link from the .env file to connect to MongoDB.
+  .then(async (client) => {
     console.log("Connected to database!");
+    await translateDao.injectDb(client);
+    await adminDao.injectDb(client);
   });
