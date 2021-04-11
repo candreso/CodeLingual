@@ -23,7 +23,7 @@ async function getTranslations(srcLang, dstLang, code) {
     let query = {};
     query[`${srcLang}.code`] = code;
     let options = {
-      /* TODO: add sort field */
+      /* TODO: add sort field? */
       // sort: default
       projection: {},
     };
