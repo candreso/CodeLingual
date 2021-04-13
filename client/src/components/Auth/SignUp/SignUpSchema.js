@@ -1,9 +1,9 @@
-import { useContext } from "react";
+// import { useContext } from "react";
 import { useFormik } from "formik";
-import { StoreContext } from "../../../store/store";
+// import { StoreContext } from "../../../store/store";
 import { useHistory } from "react-router-dom";
-import { useQuery } from "../../../Functions/Functions";
-import * as actions from "../../../store/actions";
+// import { useQuery } from "../../../Functions/Functions";
+// import * as actions from "../../../store/actions";
 import * as Yup from "yup";
 
 const SignUpSchema = Yup.object().shape({
@@ -19,7 +19,7 @@ const SignUpSchema = Yup.object().shape({
 });
 
 export default (setErrorFromServer) => {
-  const [_, dispatch] = useContext(StoreContext);
+  // const [_, dispatch] = useContext(StoreContext);
   const history = useHistory();
 
   return useFormik({

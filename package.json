@@ -7,7 +7,9 @@
     "server": "(cd server && npm run server)",
     "build-client": "(cd client && npm run build)",
     "win-install-all": "(cd client && npm install) && (cd ../server && npm install)",
-    "lin-install-all": "(cd client && npm install); (cd ../server && npm install)"
+    "lin-install-all": "(cd client && npm install); (cd ../server && npm install)",
+    "win-format": "(cd client && npm run format) && (cd ../server && npm run format)",
+    "lin-format": "(cd client && npm run format); (cd ../server && npm run format)"
   },
   "repository": {
     "type": "git",

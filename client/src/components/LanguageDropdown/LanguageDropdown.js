@@ -1,6 +1,7 @@
 import React from "react";
 import { FormControl, InputLabel, Select, MenuItem } from "@material-ui/core";
 
+// eslint-disable-next-line react/prop-types
 const LanguageDropdown = ({ className, changeFormData, formData }) => {
   const type = className === "source" ? "sl" : "dl";
 

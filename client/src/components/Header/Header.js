@@ -2,9 +2,8 @@ import styled from "styled-components";
 import "./Header.css";
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { Button, Drawer, List } from "@material-ui/core";
+import { Button, Drawer } from "@material-ui/core";
 import { HamburgerSpin } from "react-animated-burgers";
-import { faChessKing } from "@fortawesome/free-solid-svg-icons";
 
 const StyledSpin = styled(HamburgerSpin)`
   outline: none;

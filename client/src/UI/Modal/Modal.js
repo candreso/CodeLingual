@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+import React from "react";
 import ReactDOM from "react-dom";
 import { Fragment } from "react";
 import * as S from "./Modal.styles";

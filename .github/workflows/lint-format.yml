@@ -1,0 +1,51 @@
+# Lint & Format Workflow
+# This workflow runs eslint and prettier on the server and client directories, based on 
+# the specified configurations in each respective package.json. 
+
+# author: candreso
+
+name: LintAndFormat
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ candreso-styling-config ]
+    # branches: [ main ]
+  pull_request:
+    branches: [ candreso-styling-config ]
+    # branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "format"
+  format:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+          
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "14.x"
+      - name: LintAndFormat
+        run: |
+          cd client
+          npm ci
+          npm run format
+          cd ../server
+          npm ci
+          npm run format
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4.1.2
+        with:
+          commit_message: Apply linting and formatting changes
+          branch: ${{ github.head_ref }}
