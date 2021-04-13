@@ -27,13 +27,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "eject": "react-scripts eject",
+    "format": "eslint --fix . && prettier --write ."
   },
   "browserslist": {
     "production": [
@@ -54,5 +49,37 @@
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "prettier": "^2.2.1"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "commonjs": true,
+      "es6": true,
+      "node": true
+    },
+    "plugins": [
+      "prettier",
+      "react",
+      "react-hooks"
+    ],
+    "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:prettier/recommended"],
+    "parserOptions": {
+      "sourceType": "module"
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    },
+    "rules": {
+      "linebreak-style": ["error", "unix"],
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "tabWidth": 2,
+    "useTabs": false
   }
 }
