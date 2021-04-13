@@ -67,9 +67,9 @@
       "plugin:react/recommended",
       "plugin:prettier/recommended"
     ],
-    "parser": "babel-eslint",
     "parserOptions": {
-      "sourceType": "module"
+      "sourceType": "module",
+      "ecmaVersion": 2020
     },
     "settings": {
       "react": {
