@@ -38,10 +38,11 @@ jobs:
           node-version: "14.x"
       - name: LintAndFormat
         run: |
-          npm ci
           cd client
+          npm ci
           npm run format
           cd ../server
+          npm ci
           npm run format
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4.1.2
