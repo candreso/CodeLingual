@@ -12,7 +12,7 @@
   },
   "scripts": {
     "server": "nodemon server.js",
-    "format": "eslint --fix . && prettier --write ."
+    "format": "eslint --fix . && prettier --write **/*.json"
   },
   "devDependencies": {
     "eslint": "^7.24.0",
@@ -30,7 +30,13 @@
     "plugins": [
       "prettier"
     ],
-    "extends": ["eslint:recommended", "plugin:prettier/recommended"]
+    "extends": [
+      "eslint:recommended",
+      "plugin:prettier/recommended"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2020
+    }
   },
   "prettier": {
     "printWidth": 80,
