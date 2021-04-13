@@ -4,6 +4,7 @@ import FormikInit from "./SignUpSchema";
 import "../Sign.css";
 
 const SignUp = () => {
+  // eslint-disable-next-line no-unused-vars
   const [errorFromServer, setErrorFromServer] = useState();
 
   const {
@@ -13,7 +14,7 @@ const SignUp = () => {
     errors,
     touched,
     handleBlur,
-    isSubmitting,
+    // isSubmitting,
   } = FormikInit(setErrorFromServer);
   return (
     <form className="sign-wrap" onSubmit={handleSubmit}>

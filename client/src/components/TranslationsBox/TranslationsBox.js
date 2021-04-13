@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+import React from "react";
 import "./TranslationsBox.css";
 import {
   faTimes,
@@ -21,7 +23,7 @@ const TranslationsBox = ({ formData }) => {
   const [reportModal, openReportModal] = useState(false);
   const [updatedTranslation, setUpdatedTranslation] = useState("");
   const [error, setError] = useState(false);
-  const [submitSucces, setSubmitSuccess] = useState(null);
+  // const [submitSucces, setSubmitSuccess] = useState(null);
 
   const toggleModal = () => {
     openReportModal(!reportModal);

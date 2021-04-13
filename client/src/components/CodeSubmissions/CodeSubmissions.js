@@ -1,3 +1,4 @@
+import React from "react";
 import "./CodeSubmissions.css";
 
 const CodeSubmissions = () => {

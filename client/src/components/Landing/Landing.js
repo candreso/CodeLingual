@@ -33,7 +33,7 @@ const Landing = () => {
       setIsLoading(true);
       setShowDescription(false);
 
-      const TRANSLATE_END_POINT = "";
+      // const TRANSLATE_END_POINT = "";
 
       history.push("?sl=c&dl=javascript&code=console.log()");
     }
@@ -64,7 +64,7 @@ const Landing = () => {
             changeFormData={changeFormData}
             className="source"
           />
-          <div className="icon" className="center">
+          <div className="icon center">
             <FontAwesomeIcon icon={faExchangeAlt} size="2x" />
           </div>
           <LanguageDropdown
