@@ -1,4 +1,4 @@
-let trnsCol;
+=-0let trnsCol;
 
 async function injectDb(conn) {
   if (trnsCol) {
