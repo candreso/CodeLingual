@@ -16,6 +16,7 @@ app.use(express.json());
 
 /* Register API routes */
 app.use("/api/v1", routes);
+app.use("/", express.static(path.resolve(__dirname, "../client/build")));
 app.use("*", express.static(path.resolve(__dirname, "../client/build")));
 
 app.listen(port, () => {
