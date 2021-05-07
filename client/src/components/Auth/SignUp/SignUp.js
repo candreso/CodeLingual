@@ -3,8 +3,6 @@ import { TextField, Button } from "@material-ui/core";
 import FormikInit from "./SignUpSchema";
 import "../Sign.css";
 
-console.log(this);
-
 const SignUp = () => {
   // eslint-disable-next-line no-unused-vars
   const [errorFromServer, setErrorFromServer] = useState();
