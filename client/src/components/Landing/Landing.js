@@ -14,7 +14,7 @@ const Landing = () => {
   const [formData, setFormData] = useState({ sl: "", dl: "", code: "" });
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [translations, setTranslations] = useState(null)
+  const [translations, setTranslations] = useState(null);
   const history = useHistory();
 
   const changeFormData = (data) => {
@@ -36,12 +36,11 @@ const Landing = () => {
 
       const ENDPOINT = `?sl=${formData.sl}&dl=${formData.dl}&code=${formData.code}`;
 
-      
       const results = await fetch(`http://localhost:5000/api/v1${ENDPOINT}`);
       const data = await results.json();
 
-      if(data){
-        setTranslations(data)
+      if (data) {
+        setTranslations(data);
       }
 
       history.push(ENDPOINT);
@@ -104,7 +103,9 @@ const Landing = () => {
         {isLoading ? (
           <div className="spinner" />
         ) : (
-          showDescription || <TranslationsBox translations={translations} formData={formData} />
+          showDescription || (
+            <TranslationsBox translations={translations} formData={formData} />
+          )
         )}
       </S.TranslateWrap>
     </div>

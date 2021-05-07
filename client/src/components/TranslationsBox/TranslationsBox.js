@@ -42,71 +42,71 @@ const TranslationsBox = ({ formData, translations }) => {
   return (
     <div className="translations-wrap">
       {/* {translations.map((data, index) => { */}
-       
-          <div className="translation">
-            <code>{translations[formData.dl].code}</code>
-            <div className="icon-wrap">
-              <FontAwesomeIcon
-                onClick={toggleModal}
-                icon={faExclamationCircle}
-                color="red"
-                size="2x"
-              />
-            </div>
-            {reportModal && (
-              <Modal onClose={toggleModal} showModal={reportModal}>
+
+      <div className="translation">
+        <code>{translations[formData.dl].code}</code>
+        <div className="icon-wrap">
+          <FontAwesomeIcon
+            onClick={toggleModal}
+            icon={faExclamationCircle}
+            color="red"
+            size="2x"
+          />
+        </div>
+        {reportModal && (
+          <Modal onClose={toggleModal} showModal={reportModal}>
+            <FontAwesomeIcon
+              className="cancel-icon"
+              icon={faTimes}
+              onClick={toggleModal}
+              color={"#dc004e"}
+              size="2x"
+            />
+            <div className="report-wrap">
+              {error && (
+                <Alert
+                  style={{ width: "100%", boxSizing: "border-box" }}
+                  severity="error"
+                >
+                  Please fill the form correctly!
+                </Alert>
+              )}
+              <div className="report-translation">
+                <b>{formData.sl}</b>
+
                 <FontAwesomeIcon
-                  className="cancel-icon"
-                  icon={faTimes}
-                  onClick={toggleModal}
+                  icon={faArrowRight}
                   color={"#dc004e"}
-                  size="2x"
+                  size="1x"
                 />
-                <div className="report-wrap">
-                  {error && (
-                    <Alert
-                      style={{ width: "100%", boxSizing: "border-box" }}
-                      severity="error"
-                    >
-                      Please fill the form correctly!
-                    </Alert>
-                  )}
-                  <div className="report-translation">
-                    <b>{formData.sl}</b>
 
-                    <FontAwesomeIcon
-                      icon={faArrowRight}
-                      color={"#dc004e"}
-                      size="1x"
-                    />
+                <b>{formData.dl}</b>
+              </div>
+              <code className="report-code">{formData.code}</code>{" "}
+              <div className="report-text">
+                is inaccurate, and it should be...
+              </div>
+              <input
+                className="report-code-input"
+                placeholder="Enter Code"
+                type="text"
+                onChange={(e) => setUpdatedTranslation(e.target.value)}
+                value={updatedTranslation}
+              />
+              <Button
+                style={{ fontSize: "1.2rem" }}
+                variant="contained"
+                color="secondary"
+                className="report-submit"
+                onClick={updateTranslation}
+              >
+                Submit
+              </Button>
+            </div>
+          </Modal>
+        )}
+      </div>
 
-                    <b>{formData.dl}</b>
-                  </div>
-                  <code className="report-code">{formData.code}</code>{" "}
-                  <div className="report-text">
-                    is inaccurate, and it should be...
-                  </div>
-                  <input
-                    className="report-code-input"
-                    placeholder="Enter Code"
-                    type="text"
-                    onChange={(e) => setUpdatedTranslation(e.target.value)}
-                    value={updatedTranslation}
-                  />
-                  <Button
-                    style={{ fontSize: "1.2rem" }}
-                    variant="contained"
-                    color="secondary"
-                    className="report-submit"
-                    onClick={updateTranslation}
-                  >
-                    Submit
-                  </Button>
-                </div>
-              </Modal>
-            )}
-          </div>
-        
       {/* })} */}
     </div>
   );
