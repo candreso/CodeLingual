@@ -33,9 +33,14 @@ const Landing = () => {
       setIsLoading(true);
       setShowDescription(false);
 
-      const TRANSLATE_END_POINT = "";
+      const ENDPOINT = `?sl=${formData.sl}&dl=${formData.dl}&code=${formData.code}`;
 
-      history.push("?sl=c&dl=javascript&code=console.log()");
+      const results = await fetch(`http://localhost:5000${ENDPOINT}`);
+      const data = results.json();
+
+      console.log(data);
+
+      history.push(ENDPOINT);
     }
 
     setTimeout(() => {
