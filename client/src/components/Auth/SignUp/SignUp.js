@@ -3,6 +3,8 @@ import { TextField, Button } from "@material-ui/core";
 import FormikInit from "./SignUpSchema";
 import "../Sign.css";
 
+console.log(this);
+
 const SignUp = () => {
   const [errorFromServer, setErrorFromServer] = useState();
 
