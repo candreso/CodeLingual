@@ -3,7 +3,7 @@ const TranslateDao = require("../dao/translate.dao");
 async function apiGetTranslations(req, res) {
   console.log(req.query); // for testing
   let srcLang = req.query.sl;
-  let dstLang = req.query.tl;
+  let dstLang = req.query.dl;
   let code = req.query.code;
   let translation = await TranslateDao.getTranslations(srcLang, dstLang, code);
 

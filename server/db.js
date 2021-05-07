@@ -1,7 +1,6 @@
 const MongoClient = require("mongodb").MongoClient;
 const translateDao = require("./dao/translate.dao");
 const adminDao = require("./dao/admin.dao");
-require("dotenv").config();
 
 MongoClient.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,

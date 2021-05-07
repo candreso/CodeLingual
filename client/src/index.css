@@ -7,6 +7,7 @@ body {
   box-sizing: border-box;
   overflow-x: hidden;
   min-width: 300px;
+  outline: none;
 }
 
 code {
