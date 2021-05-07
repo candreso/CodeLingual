@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+import React from "react";
 import "./TranslationsBox.css";
 import {
   faTimes,
@@ -10,18 +12,18 @@ import { Button } from "@material-ui/core";
 import Alert from "@material-ui/lab/Alert";
 import Modal from "../../UI/Modal/Modal";
 
-const fakeData = [
-  "System.out.println('123')",
-  "x.toString().toHash()",
-  "export default colorPicker",
-  "import lodash from {lodash}",
-];
+// const fakeData = [
+//   "System.out.println('123')",
+//   "x.toString().toHash()",
+//   "export default colorPicker",
+//   "import lodash from {lodash}",
+// ];
 
-const TranslationsBox = ({ formData }) => {
+const TranslationsBox = ({ formData, translations }) => {
   const [reportModal, openReportModal] = useState(false);
   const [updatedTranslation, setUpdatedTranslation] = useState("");
   const [error, setError] = useState(false);
-  const [submitSucces, setSubmitSuccess] = useState(null);
+  // const [submitSucces, setSubmitSuccess] = useState(null);
 
   const toggleModal = () => {
     openReportModal(!reportModal);
@@ -39,10 +41,10 @@ const TranslationsBox = ({ formData }) => {
 
   return (
     <div className="translations-wrap">
-      {fakeData.map((data, index) => {
-        return (
-          <div key={index} className="translation">
-            <code>{data}</code>
+      {/* {translations.map((data, index) => { */}
+       
+          <div className="translation">
+            <code>{translations[formData.dl].code}</code>
             <div className="icon-wrap">
               <FontAwesomeIcon
                 onClick={toggleModal}
@@ -104,8 +106,8 @@ const TranslationsBox = ({ formData }) => {
               </Modal>
             )}
           </div>
-        );
-      })}
+        
+      {/* })} */}
     </div>
   );
 };

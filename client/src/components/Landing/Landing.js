@@ -14,6 +14,7 @@ const Landing = () => {
   const [formData, setFormData] = useState({ sl: "", dl: "", code: "" });
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [translations, setTranslations] = useState(null)
   const history = useHistory();
 
   const changeFormData = (data) => {
@@ -35,10 +36,13 @@ const Landing = () => {
 
       const ENDPOINT = `?sl=${formData.sl}&dl=${formData.dl}&code=${formData.code}`;
 
-      const results = await fetch(`http://localhost:5000${ENDPOINT}`);
-      const data = results.json();
+      
+      const results = await fetch(`http://localhost:5000/api/v1${ENDPOINT}`);
+      const data = await results.json();
 
-      console.log(data);
+      if(data){
+        setTranslations(data)
+      }
 
       history.push(ENDPOINT);
     }
@@ -69,7 +73,7 @@ const Landing = () => {
             changeFormData={changeFormData}
             className="source"
           />
-          <div className="icon" className="center">
+          <div className="icon center">
             <FontAwesomeIcon icon={faExchangeAlt} size="2x" />
           </div>
           <LanguageDropdown
@@ -100,7 +104,7 @@ const Landing = () => {
         {isLoading ? (
           <div className="spinner" />
         ) : (
-          showDescription || <TranslationsBox formData={formData} />
+          showDescription || <TranslationsBox translations={translations} formData={formData} />
         )}
       </S.TranslateWrap>
     </div>

@@ -4,6 +4,7 @@ import App from "./App";
 import StoreContext from "./store/store";
 import "./index.css";
 
+
 ReactDOM.render(
   // <React.StrictMode>
   <StoreContext>

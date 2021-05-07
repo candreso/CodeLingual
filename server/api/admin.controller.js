@@ -1,4 +1,4 @@
-function adminSignup(req, res){
+function adminSignup(req, res) {
   res.send("Inside signup() in admin.controller");
 }
 
@@ -11,7 +11,7 @@ function processDashboardSub(req, res) {
 }
 
 module.exports = {
-  signup: adminSignup,	
+  signup: adminSignup,
   login: adminLogin,
   process: processDashboardSub,
 };

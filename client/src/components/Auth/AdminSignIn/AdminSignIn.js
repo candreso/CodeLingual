@@ -4,6 +4,7 @@ import FormikInit from "./AdminSignInSchema";
 import "../Sign.css";
 
 const AdminSignIn = () => {
+  // eslint-disable-next-line no-unused-vars
   const [errorFromServer, setErrorFromServer] = useState();
 
   const {
@@ -13,7 +14,7 @@ const AdminSignIn = () => {
     errors,
     touched,
     handleBlur,
-    isSubmitting,
+    // isSubmitting,
   } = FormikInit(setErrorFromServer);
 
   return (

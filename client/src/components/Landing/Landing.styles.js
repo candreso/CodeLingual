@@ -9,4 +9,3 @@ export const TranslateWrap = styled.div`
     margin: 80px auto 0px auto;
   }
 `;
-

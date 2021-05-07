@@ -1,6 +1,7 @@
 import React from "react";
 import { FormControl, InputLabel, Select, MenuItem } from "@material-ui/core";
 
+// eslint-disable-next-line react/prop-types
 const LanguageDropdown = ({ className, changeFormData, formData }) => {
   const type = className === "source" ? "sl" : "dl";
 
@@ -18,10 +19,10 @@ const LanguageDropdown = ({ className, changeFormData, formData }) => {
         label={className === "source" ? "Source" : "Destination"}
         value={formData[type]}
       >
-        <MenuItem value="C">C</MenuItem>
-        <MenuItem value="Javascript">Javascript</MenuItem>
-        <MenuItem value="Java">Java</MenuItem>
-        <MenuItem value="Python">Python</MenuItem>
+        <MenuItem value="c">C</MenuItem>
+        <MenuItem value="javascript">Javascript</MenuItem>
+        <MenuItem value="java">Java</MenuItem>
+        <MenuItem value="python">Python</MenuItem>
       </Select>
     </FormControl>
   );

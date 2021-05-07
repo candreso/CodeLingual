@@ -1,3 +1,5 @@
+let trnsCol;
+
 async function injectDb(conn) {
   if (trnsCol) {
     // database has already been injected
