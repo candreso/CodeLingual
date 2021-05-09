@@ -7,7 +7,7 @@ require("dotenv").config({ path: path.join(__dirname, "../.env") });
 require("./db.js");
 
 const app = express();
-const port = process.env.PORT || 5000; // Checking if env port is given. If not default to 5000.
+const port = process.env.PORT || 8080; // Checking if env port is given. If not default to 8080.
 
 /* Enable CORS so client running in development mode (on port 3000) can access resources from
  * server. Will most likely be unnecessary during more advanced development stages. */
