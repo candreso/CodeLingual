@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/195ca86a-e718-4ade-bf08-f10adbaf345d/resourceGroups/rg-codelingual/providers/Microsoft.Web/sites/codelingual-v2",
+    "appService.deploySubpath": "."
+}

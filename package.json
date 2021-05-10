@@ -4,6 +4,7 @@
   "description": "The purpose of this web application is to help individuals quickly learn the basics of new languages by translating standard and common functions from one language to another (so like Google Translate, but for code)!",
   "main": "./client/public/index.html",
   "scripts": {
+    "start": "cd client && npm ci && npm run build && cd ../server && npm ci && pm2 start ./server.js --watch",
     "server": "(cd server && npm run server)",
     "build-client": "(cd client && npm run build)",
     "win-install-all": "(cd client && npm install) && (cd ../server && npm install)",

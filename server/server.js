@@ -19,6 +19,6 @@ app.use("/api/v1", routes);
 app.use("/", express.static(path.resolve(__dirname, "../client/build")));
 app.use("*", express.static(path.resolve(__dirname, "../client/build")));
 
-app.listen(port, () => {
+app.listen(port, "0.0.0.0", () => {
   console.log(`Server started at http://localhost:${port}!`);
 });
