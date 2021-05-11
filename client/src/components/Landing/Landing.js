@@ -34,9 +34,13 @@ const Landing = () => {
       setIsLoading(true);
       setShowDescription(false);
 
+      // const API_PORT = process.env.PORT || 8080;
+      const HOST =
+        process.env.CODELINGUAL_HOST ||
+        "https://codelingual-v3.azurewebsites.net";
       const ENDPOINT = `translate?sl=${formData.sl}&dl=${formData.dl}&code=${formData.code}`;
 
-      const results = await fetch(`http://localhost:8080/api/v1/${ENDPOINT}`);
+      const results = await fetch(`${HOST}/api/v1/${ENDPOINT}`);
       const data = await results.json();
 
       if (data) {
