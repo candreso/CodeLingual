@@ -35,7 +35,7 @@ const TranslationsBox = ({ formData, translations }) => {
     } else {
       setError(false);
 
-      // fetch("localhost:5000/api/v1/update-translation");
+      // fetch("localhost:8080/api/v1/update-translation");
     }
   };
 
