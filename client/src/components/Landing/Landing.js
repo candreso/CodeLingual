@@ -36,7 +36,7 @@ const Landing = () => {
 
       const ENDPOINT = `translate?sl=${formData.sl}&dl=${formData.dl}&code=${formData.code}`;
 
-      const results = await fetch(`http://localhost:5000/api/v1${ENDPOINT}`);
+      const results = await fetch(`http://localhost:8080/api/v1/${ENDPOINT}`);
       const data = await results.json();
 
       if (data) {

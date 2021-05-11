@@ -14,7 +14,7 @@ In terms of <b>MERN</b> architecture: 1. The database would be used to store tra
 Open up 2 terminals either from VS Code or your preferred terminal.
 
 Running the server: We will be using nodemon, a library that automatically restarts nodejs code upon saving, on the server.
-Run "npm run server" without the quotes in the top directory where server.js is. Server will run on your http://localhost:5000/
+Run "npm run server" without the quotes in the top directory where server.js is. Server will run on your http://localhost:8080/
 
 Running the client (React): React directory is in the "client" folder. Our client side will have its own package.json and node/modules just like our server side code will. You need to cd into the client folder and run "npm run start" which will start your react app at http://localhost:3000/
 
